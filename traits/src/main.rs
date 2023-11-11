@@ -76,3 +76,17 @@ fn main() {
     c1.park();
     t1.park();
 }
+
+fn paint_red1<T: Paint>(object: &T) {
+    object.paint("red".to_owned())
+}
+
+fn paint_red2(object: &impl Paint) {
+    object.paint("red".to_owned())
+}
+
+fn paint_red3<T>(object: &T) where T: Paint {
+    object.paint("red".to_owned())
+}
+
+// what if 
